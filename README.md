@@ -12,6 +12,7 @@ School project from **42** (curriculum shell assignment). Goal: implement a usab
 - **I/O and pipelines:** pipes and file redirections using `pipe` / `dup2`; here-documents with a dedicated subprocess and signal discipline.
 - **Parsing and structure:** tokenization and syntax checks feed an **AST** (four node kinds: simple command, pipe, `&&`, `||`) before execution.
 - **Robustness:** signal handlers differ for interactive REPL, running commands, and here-doc input so the shell stays usable under Ctrl-C and related cases.
+- **Word expansion:** parameter expansion (`$VAR`, `$?`), pathname globbing (`*`), quote removal, and IFS-aware field splitting before command execution.
 
 ## Features / scope
 
@@ -23,7 +24,7 @@ School project from **42** (curriculum shell assignment). Goal: implement a usab
 | Logical ops `&&` `\|\|` | Short-circuit on exit status |
 | Parentheses | Command grouping |
 | Builtins (7) | `echo`, `cd`, `pwd`, `env`, `export`, `unset`, `exit` |
-| Expansion | Parameters (`$VAR`, `$?`), pathname globbing, IFS-aware splitting |
+| Word expansion | `$VAR`, `$?`, pathname globbing (`*`), quote removal, IFS-aware splitting |
 | Environment | Inherited env, mutable; rebuilt for `execve` |
 
 **Out of scope:** job control (`&`), command separator `;`, non-interactive one-shot mode (`-c`). Tokens such as lone `&` or `\` are rejected by the lexer/parser.
