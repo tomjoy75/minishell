@@ -5,6 +5,12 @@ notes
 .vscode
 test_outputs
 minishell
+objs/
+param_expansion
+pathname_expansion
+valgrind.txt
+tmp.sh
+tmp2.sh
 .build_started
 .build_done
 test_print

@@ -1,2 +1,0 @@
-cmd1: Command not found
-cmd3: Command not found

@@ -1,9 +1,0 @@
-[&&] : 
-	[||] : 
-		[&&] : 
-			[EXEC] [cmd : echo 5 ][redir : ]
-			[EXEC] [cmd : echo 4 ][redir : ]
-		[EXEC] [cmd : echo 3 ][redir : ]
-	[||] : 
-		[EXEC] [cmd : echo 2 ][redir : ]
-		[EXEC] [cmd : echo 1 ][redir : ]
